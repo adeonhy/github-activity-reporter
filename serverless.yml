@@ -1,0 +1,16 @@
+service: github-activity-reporter
+
+provider:
+  name: aws
+  runtime: java8
+  stage: dev
+  region: ap-northeast-1
+  profile: ${file(./env.yml):profile}
+
+package:
+  artifact: target/scala-2.12/hello.jar
+
+functions:
+  hello:
+    handler: hello.Handler
+
